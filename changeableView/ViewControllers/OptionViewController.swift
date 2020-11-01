@@ -14,6 +14,7 @@ protocol OptionViewControllerDelegate {
 class OptionViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var changeableView: UIView!
+    @IBOutlet weak var saveButton: UIButton!
     
     @IBOutlet weak var redValue: UILabel!
     @IBOutlet weak var greenValue: UILabel!
@@ -35,8 +36,9 @@ class OptionViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         changeableView.backgroundColor = colorOfView
-        
-        sliderValue(sliders: redSlider, greenSlider, blueSlider)
+        changeableView.layer.cornerRadius = 20
+        saveButton.layer.cornerRadius = 5
+
         changeValue(labels: redValue, greenValue, blueValue)
         
         attachSaveButtonToTextFields(redTextField, greenTextField, blueTextField)
@@ -88,23 +90,6 @@ extension OptionViewController {
                 blueValue.text = formatingSlidersValue(slider: blueSlider)
             default:
                 break
-        }
-    }
-}
-    private func sliderValue(sliders: UISlider...) {
-        
-        let color = CIColor(color: colorOfView)
-        
-        sliders.forEach { slider in
-            switch slider.tag {
-            case 0:
-                redSlider.value = Float(color.red)
-            case 1:
-                greenSlider.value = Float(color.green)
-            case 2:
-                blueSlider.value = Float(color.blue)
-            default:
-                break
             }
         }
     }
@@ -112,13 +97,12 @@ extension OptionViewController {
 
 extension OptionViewController {
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
+    @objc private func saveTapped() {
         view.endEditing(true)
     }
     
-    
-    @objc private func saveTapped() {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     

@@ -62,9 +62,9 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYa-he-gQu">
-                                <rect key="frame" x="133.5" y="457" width="53" height="42"/>
+                                <rect key="frame" x="128" y="451" width="64" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -218,6 +218,7 @@
                         <outlet property="redSlider" destination="84y-sy-Fes" id="xqV-H1-TfQ"/>
                         <outlet property="redTextField" destination="Ehh-LJ-Cdt" id="5M1-Pt-bhA"/>
                         <outlet property="redValue" destination="KeK-3H-g4D" id="RXf-d3-Vog"/>
+                        <outlet property="saveButton" destination="WYa-he-gQu" id="FWm-dN-5wD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
